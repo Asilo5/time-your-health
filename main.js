@@ -37,9 +37,12 @@ function loadStoredTasks() {
 function displayTasks(task) {
     activitiesContainer.insertAdjacentHTML('afterbegin', `
       <section class='users-task task-${task.id}'>
-        <h3>${task.category}</h3>
-        <p> ${task.minutes}MIN  ${task.seconds}SECONDS</p>
-        <p>${task.task}</p>
+        <div class='task-info'> 
+          <h3>${task.category}</h3>
+          <p> ${task.minutes}MIN  ${task.seconds}SECONDS</p>
+          <p>${task.task}</p>
+        </div>
+        <button class='delete'>X</button> 
        </section>
     `)
 }

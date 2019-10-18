@@ -12,4 +12,6 @@ class HealthTasks {
      localStorage.setItem('task', stringifiedTask);
    }
 
+   
+
 }

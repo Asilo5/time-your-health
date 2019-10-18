@@ -37,6 +37,10 @@ form {
   border-radius: 20px;
 }
 
+.past-activities {
+  overflow: scroll;
+}
+
 h2 {
   color: white;
 }
@@ -121,4 +125,26 @@ input {
     background: #FFC312;
     width: 21em;
     border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete {
+  background-color: transparent;
+  color: red;
+  font-size: 20px;
+  border: none;
+  cursor: grab;
+  font-weight: bold;
+  padding: 18px;
+  border-radius: 50%;
+}
+
+.delete:hover {
+  background-color: red;
+  color: white;
+}
+
+.task-info {
+  flex: 1;
 }

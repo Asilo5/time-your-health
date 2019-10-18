@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = 'en-gb'>
+<head>
+  <title>Time Your Health</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet' type='text/css' href='./style.css' />
+</head>
+<body>
+    <header>
+      <h1>Time Your Health</h1>
+    </header>
+    <main>
+        <section class='plan-activities'>
+            <h2>Le Death</h2>
+            <section class='fill-out'>
+                <form>
+                    <h2>Select Category:</h2>
+                    <div class='category-btn'>
+                        <button class='study active' name='task' value='study'>Study</button>
+                        <button class='meditate active' name='task' value='meditate'>Meditate</button>
+                        <button class='exercise active' name='task' value='exercise'>Exercise</button>
+                    </div>
+                    <div class='task-input'>
+                      <label for='task'>What would you like to accomplish during this time?</label>
+                      <input class='task-text' id='task' type='text' />
+                    </div>
+                    <div class='timing-input'>
+                        <div>
+                          <label for='minutes'>Minutes</label>
+                          <input class='minutes-input' id='minutes' type='number' />
+                        </div>
+                        <div>
+                          <label for='seconds'>Seconds</label>
+                          <input class='seconds-input' id='seconds' type='number' />
+                        </div>
+                    </div>
+                   <button class="submit-btn active">Start Activity</button>
+                </form>
+
+            </section>
+        </section>
+
+        <section class='past-activities'>
+          <h2>Past Activities</h2>
+            <section class='activities-container'>
+               <h3 class='add-notification'></h3>
+            </section>
+        </section>
+    </main>
+  <script src='./HealthTasks.js'></script>
+  <script src='./main.js'></script>
+</body>
+</html>

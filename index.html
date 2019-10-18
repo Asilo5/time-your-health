@@ -2,6 +2,8 @@
 <html lang = 'en-gb'>
 <head>
   <title>Time Your Health</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel='stylesheet' type='text/css' href='./style.css' />
 </head>
 <body>
@@ -15,9 +17,9 @@
                 <form>
                     <h2>Select Category:</h2>
                     <div class='category-btn'>
-                        <button class='study active'>Study</button>
-                        <button class='meditate active'>Meditate</button>
-                        <button class='exercise active'>Exercise</button>
+                        <button class='study active' name='task' value='study'>Study</button>
+                        <button class='meditate active' name='task' value='meditate'>Meditate</button>
+                        <button class='exercise active' name='task' value='exercise'>Exercise</button>
                     </div>
                     <div class='task-input'>
                       <label for='task'>What would you like to accomplish during this time?</label>
@@ -42,11 +44,11 @@
         <section class='past-activities'>
           <h2>Past Activities</h2>
             <section class='activities-container'>
-               <p>You haven't logged any activities yet.</p>
-               <p> Complete form on the left to get started </p>
+               <h3 class='add-notification'></h3>
             </section>
         </section>
     </main>
-<script src='./main.js'></script>
+  <script src='./HealthTasks.js'></script>
+  <script src='./main.js'></script>
 </body>
 </html>

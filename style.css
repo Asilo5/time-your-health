@@ -115,3 +115,10 @@ input {
     border-bottom: 2px solid;
 }
 
+.users-task {
+    padding: 18px;
+    margin: 20px;
+    background: #FFC312;
+    width: 21em;
+    border-radius: 10px;
+}

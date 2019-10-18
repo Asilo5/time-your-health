@@ -36,13 +36,13 @@ function loadStoredTasks() {
 
 function displayTasks(task) {
     activitiesContainer.insertAdjacentHTML('afterbegin', `
-      <section class='users-task task-${task.id}'>
+      <section class='users-task' id=${task.id}>
         <div class='task-info'> 
           <h3>${task.category}</h3>
           <p> ${task.minutes}MIN  ${task.seconds}SECONDS</p>
           <p>${task.task}</p>
         </div>
-        <button class='delete'>X</button> 
+        <button class='delete' onclick='deleteCardTask(this)' >X</button> 
        </section>
     `)
 }
@@ -58,4 +58,13 @@ function displayEmptyMessage() {
 function selectedCategory(e) {
   e.preventDefault();
   chosenCategory = e.target.value;
+}
+
+function deleteCardTask(e) {
+  var taskCard = e.parentElement;
+  var newTasks = arrayOfTasks.filter((task) => task.id !== taskCard.id);
+  if (e.className === 'delete') {
+      taskCard.remove()
+      arrayOfTasks.deleteTask(newTasks);
+  }
 }

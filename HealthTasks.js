@@ -12,6 +12,9 @@ class HealthTasks {
      localStorage.setItem('task', stringifiedTask);
    }
 
-   
+   deleteTask(newTasks) {
+    //  var newTasks = taskList.filter((task) => task.id !== taskId);
+     this.saveTask(newTasks);
+   }
 
 }

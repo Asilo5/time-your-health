@@ -51,7 +51,7 @@ function displayTasks(task) {
 
 function displayEmptyMessage() {
     if (arrayOfTasks.length === 0) {
-       addNotification.innerText = "0 activities. Complete form on the left to get started";
+       addNotification.innerText = "0 activities. Complete form on the left to get started!";
     } else {
       addNotification.innerText = '';
     }

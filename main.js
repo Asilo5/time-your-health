@@ -11,6 +11,7 @@ var chosenCategory;
 var arrayOfTasks = JSON.parse(localStorage.getItem('task')) || [];
 
 window.addEventListener('load', loadStoredTasks);
+window.addEventListener('load', displayEmptyMessage);
 submitButton.addEventListener('click', storeTasks);
 studyButton.addEventListener('click', selectedCategory);
 meditateButton.addEventListener('click', selectedCategory);
@@ -24,6 +25,7 @@ function storeTasks(e) {
   arrayOfTasks.push(healthTask);
   healthTask.saveTask(arrayOfTasks);
   displayTasks(healthTask);
+  displayEmptyMessage();
 }
 
 function loadStoredTasks() {
@@ -48,8 +50,8 @@ function displayTasks(task) {
 }
 
 function displayEmptyMessage() {
-    if (arrayOfTasks.length) {
-       addNotification.innerText = "You haven't logged any activities yet.Complete form on the left to get started";
+    if (arrayOfTasks.length === 0) {
+       addNotification.innerText = "0 activities. Complete form on the left to get started";
     } else {
       addNotification.innerText = '';
     }

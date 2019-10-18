@@ -148,3 +148,7 @@ input {
 .task-info {
   flex: 1;
 }
+
+.add-notification {
+  margin-top: 6em;
+}

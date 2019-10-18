@@ -11,25 +11,39 @@
     <main>
         <section class='plan-activities'>
             <h2>Le Death</h2>
-            <form>
-                <div>
-                    <button>Study</button>
-                    <button>Meditate</button>
-                    <button>Exercise</button>
-                </div>
-                <input />
-                <div>
-                    <input />
-                    <input />
-                </div>
-               <button>Start Activity</button>
-            </form>
+            <section class='fill-out'>
+                <form>
+                    <h2>Select Category:</h2>
+                    <div class='category-btn'>
+                        <button class='study active'>Study</button>
+                        <button class='meditate active'>Meditate</button>
+                        <button class='exercise active'>Exercise</button>
+                    </div>
+                    <div class='task-input'>
+                      <label for='task'>What would you like to accomplish during this time?</label>
+                      <input id='task' type='text' />
+                    </div>
+                    <div class='timing-input'>
+                        <div>
+                          <label for='minutes'>Minutes</label>
+                          <input id='minutes' type='number' />
+                        </div>
+                        <div>
+                          <label for='seconds'>Seconds</label>
+                          <input id='seconds' type='number' />
+                        </div>
+                    </div>
+                   <button class="submit-btn active">Start Activity</button>
+                </form>
+
+            </section>
         </section>
 
-        <section>
+        <section class='past-activities'>
           <h2>Past Activities</h2>
-            <section class='past-activities'>
-
+            <section class='activities-container'>
+               <p>You haven't logged any activities yet.</p>
+               <p> Complete form on the left to get started </p>
             </section>
         </section>
     </main>

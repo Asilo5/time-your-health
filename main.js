@@ -7,16 +7,19 @@ var secondsInput = document.querySelector('.seconds-input');
 var submitButton = document.querySelector('.submit-btn');
 var activitiesContainer = document.querySelector('.activities-container');
 var addNotification = document.querySelector('.add-notification');
+var timerSection = document.querySelector('.timer');
+var formSection = document.querySelector('.theForm');
+var timeButton = document.querySelector('.log-time');
+
 var chosenCategory;
 var arrayOfTasks = JSON.parse(localStorage.getItem('task')) || [];
-
+ 
 window.addEventListener('load', loadStoredTasks);
-submitButton.addEventListener('click', storeTasks);
+submitButton.addEventListener('click', countDown);
 studyButton.addEventListener('click', selectedCategory);
 meditateButton.addEventListener('click', selectedCategory);
 exerciseButton.addEventListener('click', selectedCategory);
-
-
+timeButton.addEventListener('click', storeTasks);
 
 function storeTasks(e) {
   e.preventDefault();
@@ -24,9 +27,13 @@ function storeTasks(e) {
   arrayOfTasks.push(healthTask);
   healthTask.saveTask(arrayOfTasks);
   displayTasks(healthTask);
+  formSection.style.display = 'block';
+  timerSection.style.display = 'none';
 }
 
 function loadStoredTasks() {
+  formSection.style.display = 'block';
+  timerSection.style.display = 'none';
   arrayOfTasks = arrayOfTasks.map(function(usedTask) {
     var storedTasks = new HealthTasks(usedTask.id, usedTask.category, usedTask.task, usedTask.minutes, usedTask.seconds);
     displayTasks(storedTasks);
@@ -60,6 +67,12 @@ function selectedCategory(e) {
   chosenCategory = e.target.value;
 }
 
+function clearInputs() {
+   taskInput.value = ''; 
+   minutesInput.value = '';  
+   secondsInput.value = ''; 
+}
+
 function deleteCardTask(e) {
   var taskCard = e.parentElement;
   var newTasks = arrayOfTasks.filter((task) => task.id !== taskCard.id);
@@ -68,3 +81,35 @@ function deleteCardTask(e) {
       arrayOfTasks.deleteTask(newTasks);
   }
 }
+
+var counter = 0;
+var min = 4;
+var sec = 10;
+var timeLeft = 60;
+
+function convertSeconds(secs) {
+  min = Math.floor(secs/60);
+  sec = secs % 60;
+  return `${min}m : ${sec}s`;
+}
+
+function countDown(e) {
+  e.preventDefault();
+  timerSection.style.display = 'block';
+  formSection.style.display = 'none';
+  var countDown = document.querySelector('.count-down');
+  setInterval(timeIt, 1000);
+
+  function timeIt () {
+    counter++;
+    var timerShit = convertSeconds(timeLeft - counter);
+    countDown.innerHTML = timerShit;
+  }
+  clearInputs();
+}
+
+
+
+countDown();
+
+
